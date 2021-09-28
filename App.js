@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import EventScreen from "./screens/EventScreen.js";
 import BotScreen from "./screens/BotScreen.js";
 import HomeScreen from "./screens/HomeScreen.js";
+import NewEventScreen from "./screens/NewEventScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Events" component={EventScreen} />
         <Stack.Screen name="ChatBot" component={BotScreen} />
+        <Stack.Screen name="NewEvent" component={NewEventScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
