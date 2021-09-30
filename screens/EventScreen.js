@@ -8,7 +8,7 @@ const EventScreen = ({ navigation }) => {
         style={styles.add_button}
         onPress={() => navigation.navigate("NewEvent")}
       >
-        <Text style={styles.add_text}>Go to Events Page!</Text>
+        <Text style={styles.add_text}>Go to New Events Page!</Text>
       </TouchableOpacity>
     </View>
   );
