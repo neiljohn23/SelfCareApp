@@ -11,6 +11,7 @@ import {
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
+      {/* Button to navigate to the events screen (TO BE UPDATED FOR SURE) */}
       <TouchableOpacity
         style={styles.events_button}
         onPress={() => navigation.navigate("Events")}
@@ -18,6 +19,7 @@ const HomeScreen = ({ navigation }) => {
         <Text>Go to Events Page!</Text>
       </TouchableOpacity>
 
+      {/* Robot button at bottom of screen to navigate to the chat bot */}
       <TouchableOpacity
         style={styles.bot_button}
         onPress={() => navigation.navigate("ChatBot")}

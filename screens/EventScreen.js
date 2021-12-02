@@ -2,16 +2,19 @@ import React from "react";
 import {
   Text,
   View,
-  Button,
   TouchableOpacity,
   StyleSheet,
   Image,
   SafeAreaView,
   FlatList,
+  ImageBackground,
 } from "react-native";
 
 const EventScreen = ({ navigation }) => {
-  const DATA = [
+  {
+    /* Array of event data that is passed to the FlatList */
+  }
+  const EVENT_DATA = [
     {
       id: 0,
       title: "Biking for Beginners",
@@ -46,6 +49,11 @@ const EventScreen = ({ navigation }) => {
     },
   ];
 
+  {
+    /* This is the component that is repeated. Props (data from EVENT_DATA) from 
+       renderItem are passed in, and this function will use those props to render
+       the image and text to be found in the repeated event card. */
+  }
   const Item = ({ title, location, address, date, img }) => (
     <View>
       <TouchableOpacity style={[styles.card, styles.shadowProp]}>
@@ -58,6 +66,10 @@ const EventScreen = ({ navigation }) => {
     </View>
   );
 
+  {
+    /* renderItem is called from the FlatList component. It uses data from EVENT_DATA
+       to create props which are to be passed into and used by the Item component.   */
+  }
   const renderItem = ({ item }) => (
     <Item
       title={item.title}
@@ -70,11 +82,18 @@ const EventScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={require("../assets/blue-wave.png")} style={{ top: 0 }} />
+      {/* Blue swoosh at the top of the page */}
+      <Image
+        source={require("../assets/blue-wave.png")}
+        style={{ position: "absolute" }}
+      />
+      <Text style={{ justifyContent: "center", margin: 10 }}>EVENTS FEED</Text>
+      {/* List of events to be rendered */}
       <FlatList
-        data={DATA}
+        data={EVENT_DATA}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
+        style={{ marginTop: 95 }}
       />
 
       <TouchableOpacity
@@ -93,7 +112,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     flexDirection: "column",
-    margin: 15,
   },
   card: {
     flex: 1,
