@@ -6,6 +6,7 @@ import {
   Button,
   Image,
   Text,
+  ImageBackground,
 } from "react-native";
 
 import TipList from "./../components/TipList.js";
@@ -23,11 +24,12 @@ const HomeScreen = ({ navigation }) => {
       <View>
         {/* Blue swoosh at the top of the page */}
         <Image source={require("../assets/blue-wave.png")} />
+        {/* Welome message that uses the name of the user */}
         <Text
           style={{
             position: "absolute",
             top: 81,
-            left: 27,
+            left: 10,
             width: 284,
             fontSize: 22,
           }}
@@ -35,10 +37,42 @@ const HomeScreen = ({ navigation }) => {
           Welcome back,{" "}
           <Text style={{ fontWeight: "bold" }}>{USER_DATA[0].name}.</Text>
         </Text>
+        {/* Everything wrapped in this view is for the emergency banner at the top */}
+        <View>
+          <ImageBackground
+            source={require("../assets/red_emergency.png")}
+            style={{
+              marginTop: 15,
+              width: 250,
+              height: 30,
+              paddingTop: 6,
+              paddingLeft: 10,
+            }}
+          >
+            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 15 }}>
+              Having an emergency?
+            </Text>
+            <TouchableOpacity>
+              <ImageBackground
+                source={require("../assets/yellow-oval.png")}
+                style={{ width: 62, height: 23, top: -20, left: 172 }}
+              >
+                <Image
+                  source={require("../assets/arrow.png")}
+                  style={{ top: 4, left: 22 }}
+                />
+              </ImageBackground>
+            </TouchableOpacity>
+          </ImageBackground>
+        </View>
       </View>
 
       {/* List of tips */}
       <View>
+        <Text style={{ marginTop: 20, left: 20, color: "#444444" }}>
+          General Health Tips
+        </Text>
+        {/* Our custom FlatList component for displaying tips */}
         <TipList style={styles.tip_list} />
       </View>
 
@@ -69,7 +103,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 20,
     padding: 10,
-    margin: 100,
+    margin: 70,
+    fontWeight: "bold",
     justifyContent: "flex-end",
   },
   bot_button: {
@@ -77,10 +112,16 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     marginBottom: 20,
+    marginRight: 10,
     alignSelf: "flex-end",
     justifyContent: "flex-end",
   },
-  tip_list: {},
+  shadowProp: {
+    shadowColor: "#171717",
+    shadowOffset: { width: -2, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+  },
 });
 
 export default HomeScreen;

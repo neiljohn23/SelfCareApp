@@ -32,6 +32,7 @@ const TipList = () => {
     },
   ];
 
+  /* Simply renders a pressable component with the title displayed */
   const Item = ({ title }) => (
     <TouchableOpacity style={[styles.container, styles.shadowProp]}>
       <Text style={styles.text}>{title}</Text>
@@ -57,8 +58,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "column",
     justifyContent: "center",
-    margin: 10,
-    marginTop: 30,
+    marginHorizontal: 10,
+    marginBottom: 10,
+    marginTop: 20,
     left: 8,
     padding: 10,
     width: 150,

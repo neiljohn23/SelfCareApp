@@ -55,7 +55,8 @@ const EventScreen = ({ navigation }) => {
 
   {
     /* Component for small purple banner that reads "VIRTUAL". 
-       Will be rendered based on the 'virtual' field.*/
+       Will be rendered based on the 'virtual' field.
+       DOES NOT WORK YET */
   }
   const VirtualIcon = () => {
     return (
@@ -66,7 +67,8 @@ const EventScreen = ({ navigation }) => {
   };
 
   {
-    /* Decides whether or not the virtual banner will be displayed. */
+    /* Decides whether or not the virtual banner will be displayed. 
+      DOES NOT WORK YET*/
   }
   function DisplayVirtual({ virtual }) {
     if (virtual) {
