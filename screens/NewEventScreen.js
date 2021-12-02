@@ -28,10 +28,7 @@ class NewEventScreen extends React.Component {
     return (
       <View style={styles.container}>
         {/* Blue swoosh at the top of the page */}
-        <Image
-          source={require("../assets/blue-wave.png")}
-          style={{ position: "absolute" }}
-        />
+        <Image source={require("../assets/blue-wave.png")} />
 
         <Text style={styles.title}>Add New Event</Text>
 
@@ -101,8 +98,8 @@ class NewEventScreen extends React.Component {
         {/* This button currently does nothing (obvi) */}
         <TouchableOpacity
           style={{
+            margin: 60,
             alignItems: "center",
-            margin: 20,
           }}
         >
           <Text
@@ -112,6 +109,7 @@ class NewEventScreen extends React.Component {
               borderColor: "black",
               borderRadius: 15,
               padding: 10,
+              alignItems: "center",
             }}
           >
             Submit for Review
@@ -126,12 +124,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     borderRadius: 20,
-    padding: 10,
-    paddingTop: 0,
-    paddingLeft: 0,
-    flexDirection: "column",
-    alignItems: "flex-start",
-    justifyContent: "space-around",
     marginBottom: 20,
   },
 
@@ -139,7 +131,7 @@ const styles = StyleSheet.create({
   fieldContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
-    margin: 10,
+    margin: 19,
   },
 
   /* Same as fieldContainer for now but Ellen created this cause it may end up needing

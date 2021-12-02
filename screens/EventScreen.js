@@ -22,6 +22,7 @@ const EventScreen = ({ navigation }) => {
       address: "Bike Shop, Cole #0249",
       date: "January 29, 2021",
       img: require("../assets/woman-on-bike.png"),
+      virtual: false,
     },
     {
       id: 1,
@@ -30,6 +31,7 @@ const EventScreen = ({ navigation }) => {
       address: "ONLINE",
       date: "January 30, 2021",
       img: require("../assets/coin-jar.png"),
+      virtual: true,
     },
     {
       id: 2,
@@ -38,6 +40,7 @@ const EventScreen = ({ navigation }) => {
       address: "",
       date: "February 1, 2021",
       img: require("../assets/doc-w-client.png"),
+      virtual: false,
     },
     {
       id: 3,
@@ -46,18 +49,42 @@ const EventScreen = ({ navigation }) => {
       address: "STAMP Grand Ballroom",
       date: "February 2, 2021",
       img: require("../assets/blood-drive.png"),
+      virtual: false,
     },
   ];
+
+  {
+    /* Component for small purple banner that reads "VIRTUAL". 
+       Will be rendered based on the 'virtual' field.*/
+  }
+  const VirtualIcon = () => {
+    return (
+      <View style={virtualIcon}>
+        <Text style={{ fontWeight: "bold" }}>VIRTUAL</Text>
+      </View>
+    );
+  };
+
+  {
+    /* Decides whether or not the virtual banner will be displayed. */
+  }
+  function DisplayVirtual({ virtual }) {
+    if (virtual) {
+      return <VirtualIcon />;
+    }
+    return <></>;
+  }
 
   {
     /* This is the component that is repeated. Props (data from EVENT_DATA) from 
        renderItem are passed in, and this function will use those props to render
        the image and text to be found in the repeated event card. */
   }
-  const Item = ({ title, location, address, date, img }) => (
+  const Item = ({ title, location, address, date, img, virtual }) => (
     <View>
       <TouchableOpacity style={[styles.card, styles.shadowProp]}>
         <Image source={img} />
+        <DisplayVirtual isVirtual={virtual} />
         <Text>{title}</Text>
         <Text>{location}</Text>
         <Text>{address}</Text>
@@ -77,6 +104,7 @@ const EventScreen = ({ navigation }) => {
       address={item.address}
       date={item.date}
       img={item.img}
+      virtual={item.virtual}
     />
   );
 
@@ -113,6 +141,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-start",
     flexDirection: "column",
+    backgroundColor: "#fff",
   },
   card: {
     flex: 1,
@@ -127,6 +156,7 @@ const styles = StyleSheet.create({
     borderColor: "#F0F2F4",
     borderWidth: 1,
     backgroundColor: "#F0F2F4",
+    backgroundColor: "#fff",
   },
   add_button: {
     justifyContent: "center",
@@ -138,7 +168,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     width: 200,
     height: 50,
-    margin: 10,
+    margin: 15,
   },
   add_text: {
     justifyContent: "center",
@@ -151,6 +181,9 @@ const styles = StyleSheet.create({
     shadowOffset: { width: -2, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 5,
+  },
+  virtualIcon: {
+    backgroundColor: "#b08ce4",
   },
 });
 
