@@ -5,6 +5,7 @@ import {
   StyleSheet,
   View,
   Button,
+  Image,
   TouchableOpacity,
 } from "react-native";
 
@@ -26,6 +27,8 @@ class NewEventScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image source={require("../assets/blue-wave.png")} style={{ top: 0 }} />
+
         <Text style={styles.title}>Add New Event</Text>
 
         {/* Container for event name field */}
@@ -120,7 +123,10 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 20,
     padding: 10,
+    paddingTop: 0,
+    paddingLeft: 0,
     flexDirection: "column",
+    alignItems: "flex-start",
     justifyContent: "space-around",
     marginBottom: 20,
   },
@@ -141,7 +147,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    alignItems: "center",
+    alignItems: "flex-end",
     justifyContent: "center",
     fontSize: 25,
     paddingLeft: 100,
