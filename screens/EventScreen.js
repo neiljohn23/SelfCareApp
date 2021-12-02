@@ -88,6 +88,7 @@ const EventScreen = ({ navigation }) => {
         style={{ position: "absolute" }}
       />
       <Text style={{ justifyContent: "center", margin: 10 }}>EVENTS FEED</Text>
+
       {/* List of events to be rendered */}
       <FlatList
         data={EVENT_DATA}
@@ -100,7 +101,7 @@ const EventScreen = ({ navigation }) => {
         style={styles.add_button}
         onPress={() => navigation.navigate("NewEvent")}
       >
-        <Text style={styles.add_text}>Go to New Events Page!</Text>
+        <Text style={styles.add_text}>Add an Event</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -123,8 +124,9 @@ const styles = StyleSheet.create({
     width: 300,
     borderStyle: "solid",
     borderRadius: 5,
-    borderColor: "#605c6c",
+    borderColor: "#F0F2F4",
     borderWidth: 1,
+    backgroundColor: "#F0F2F4",
   },
   add_button: {
     justifyContent: "center",
@@ -135,6 +137,8 @@ const styles = StyleSheet.create({
     borderColor: "#605c6c",
     borderRadius: 5,
     width: 200,
+    height: 50,
+    margin: 10,
   },
   add_text: {
     justifyContent: "center",
@@ -146,7 +150,7 @@ const styles = StyleSheet.create({
     shadowColor: "#171717",
     shadowOffset: { width: -2, height: 4 },
     shadowOpacity: 0.2,
-    shadowRadius: 3,
+    shadowRadius: 5,
   },
 });
 
