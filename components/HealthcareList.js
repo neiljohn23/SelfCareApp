@@ -9,43 +9,47 @@ import {
   Image,
 } from "react-native";
 
-const TipList = () => {
-  const TIP_DATA = [
+const HealthcareList = () => {
+  const DATA = [
     {
-      id: "00",
-      title: "Stress and Anxiety",
+      id: "10",
+      title: "Women's Health",
+      img: require("../assets/my-healthcare-list/womens-health.png"),
     },
     {
-      id: "01",
-      title: "Sleep",
+      id: "11",
+      title: "On-Campus Pharmacy Services",
+      img: require("../assets/my-healthcare-list/pharmacy.png"),
     },
     {
-      id: "02",
-      title: "Cold, Flu, Sore Throat",
+      id: "12",
+      title: "Primary Care Services",
+      img: require("../assets/my-healthcare-list/primary-care.png"),
     },
     {
-      id: "03",
-      title: "Vaccination",
-    },
-    {
-      id: "04",
-      title: "Sexual Health",
+      id: "13",
+      title: "Counseling Center Appointment",
+      img: require("../assets/my-healthcare-list/counseling-center.png"),
     },
   ];
 
   /* Simply renders a pressable component with the title displayed */
-  const Item = ({ title }) => (
+  const Item = ({ title, img }) => (
     <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+      <Image
+        source={img}
+        style={{ resizeMode: "contain", height: 100, width: 200 }}
+      />
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
 
-  const renderItem = ({ item }) => <Item title={item.title} />;
+  const renderItem = ({ item }) => <Item title={item.title} img={item.img} />;
 
   return (
     <SafeAreaView>
       <FlatList
-        data={TIP_DATA}
+        data={DATA}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         horizontal={true}
@@ -64,8 +68,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
     left: 8,
     padding: 10,
-    width: 150,
-    height: 100,
+    width: 200,
+    height: 200,
     borderStyle: "solid",
     borderRadius: 10,
     borderColor: "#F0F2F4",
@@ -86,4 +90,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TipList;
+export default HealthcareList;
