@@ -12,7 +12,7 @@ import {
 
 import TipList from "./../components/TipList.js";
 import HealthcareList from "./../components/HealthcareList.js";
-import UrgentCare from "./../components/UrgentCare.js";
+import UrgentCareList from "./../components/UrgentCareList.js";
 import EventsNearYou from "./../components/EventsNearYou.js";
 
 const HomeScreen = ({ navigation }) => {
@@ -25,6 +25,8 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <ScrollView style={styles.container}>
+      {/* Stuff at the top wrapped in this View: 
+          blue swoosh; welcome message; emergency banner */}
       <View>
         {/* Blue swoosh at the top of the page */}
         <Image source={require("../assets/blue-wave.png")} />
@@ -33,6 +35,7 @@ const HomeScreen = ({ navigation }) => {
           Welcome back,{" "}
           <Text style={{ fontWeight: "bold" }}>{USER_DATA[0].name}.</Text>
         </Text>
+
         {/* Everything wrapped in this view is for the emergency banner at the top */}
         <View>
           <ImageBackground
@@ -57,7 +60,7 @@ const HomeScreen = ({ navigation }) => {
         </View>
       </View>
 
-      {/* List of tips */}
+      {/* General Health Tips list (uses custom TipList component) */}
       <View>
         <Text
           style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
@@ -68,7 +71,7 @@ const HomeScreen = ({ navigation }) => {
         <TipList />
       </View>
 
-      {/* List of healthcare cards */}
+      {/* Your Healthcare list (uses custom HealthcareList component) */}
       <View>
         <Text
           style={{
@@ -81,6 +84,7 @@ const HomeScreen = ({ navigation }) => {
         >
           Your Healthcare
         </Text>
+        {/* The little ovals above the list (see Figma) */}
         <ScrollView
           style={{ flexDirection: "row", left: 15 }}
           horizontal={true}
@@ -95,11 +99,11 @@ const HomeScreen = ({ navigation }) => {
             <Text>Mental Health</Text>
           </TouchableOpacity>
         </ScrollView>
-        {/* Our custom FlatList component for displaying healthcare cards */}
+        {/* Our custom FlatList component for displaying healthcare cards in a list */}
         <HealthcareList />
       </View>
 
-      {/* List of urgent care facilities nearby*/}
+      {/* Explore Urgent Care Near You list (uses custom UrgentCareList component) */}
       <View>
         <Text
           style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
@@ -107,17 +111,17 @@ const HomeScreen = ({ navigation }) => {
           Explore Urgent Care Near You
         </Text>
         {/* Our custom FlatList component for displaying tips */}
-        <UrgentCare />
+        <UrgentCareList />
       </View>
 
-      {/* List of tips */}
+      {/* Events Near You list (uses custom EventsNearYou list) */}
       <View>
         <Text
           style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
         >
           Events Near You
         </Text>
-        {/* Our custom FlatList component for displaying tips */}
+        {/* Our custom FlatList component for displaying events near you */}
         <EventsNearYou />
       </View>
 
@@ -145,11 +149,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   events_button: {
-    backgroundColor: "#fff",
+    backgroundColor: "#e0ded7",
     borderRadius: 20,
     padding: 10,
     margin: 70,
     fontWeight: "bold",
+    width: 145,
     justifyContent: "flex-end",
   },
   bot_button: {

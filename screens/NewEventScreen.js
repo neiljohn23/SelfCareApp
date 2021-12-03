@@ -16,8 +16,8 @@ class NewEventScreen extends React.Component {
       eventName: "",
       hostOrg: "",
       date: new Date(),
-      startTime: 0,
-      endTime: 0,
+      startTime: "",
+      endTime: "",
       location: "",
     };
 
@@ -67,7 +67,7 @@ class NewEventScreen extends React.Component {
           <Text style={{ flex: 1, margin: 6, fontSize: 14.5 }}>Time</Text>
           <TextInput
             style={{ flex: 1, marginLeft: 2, backgroundColor: "#E0E4E7" }}
-            value={this.state.hostOrg}
+            value={this.state.startTime}
             onChangeText={(startTime) => {
               this.setState({ startTime });
             }}
@@ -75,7 +75,7 @@ class NewEventScreen extends React.Component {
           <Text style={{ margin: 1 }}> to </Text>
           <TextInput
             style={{ flex: 1, marginLeft: 2, backgroundColor: "#E0E4E7" }}
-            value={this.state.hostOrg}
+            value={this.state.endTime}
             onChangeText={(endTime) => {
               this.setState({ endTime });
             }}
@@ -87,7 +87,7 @@ class NewEventScreen extends React.Component {
           <Text style={{ flex: 1, margin: 6, fontSize: 14.5 }}>Location</Text>
           <TextInput
             style={{ flex: 3, marginLeft: 2, backgroundColor: "#E0E4E7" }}
-            value={this.state.eventName}
+            value={this.state.location}
             onChangeText={(location) => {
               this.setState({ location });
             }}

@@ -9,7 +9,7 @@ import {
   Image,
 } from "react-native";
 
-const UrgentCare = () => {
+const UrgentCareList = () => {
   const DATA = [
     {
       id: "20",
@@ -95,4 +95,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UrgentCare;
+export default UrgentCareList;
