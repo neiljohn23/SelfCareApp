@@ -13,6 +13,7 @@ import {
 import TipList from "./../components/TipList.js";
 import HealthcareList from "./../components/HealthcareList.js";
 import UrgentCare from "./../components/UrgentCare.js";
+import EventsNearYou from "./../components/EventsNearYou.js";
 
 const HomeScreen = ({ navigation }) => {
   const USER_DATA = [
@@ -23,109 +24,118 @@ const HomeScreen = ({ navigation }) => {
   ];
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
+    <ScrollView style={styles.container}>
+      <View>
+        {/* Blue swoosh at the top of the page */}
+        <Image source={require("../assets/blue-wave.png")} />
+        {/* Welome message that uses the name of the user */}
+        <Text style={styles.welcome_message}>
+          Welcome back,{" "}
+          <Text style={{ fontWeight: "bold" }}>{USER_DATA[0].name}.</Text>
+        </Text>
+        {/* Everything wrapped in this view is for the emergency banner at the top */}
         <View>
-          {/* Blue swoosh at the top of the page */}
-          <Image source={require("../assets/blue-wave.png")} />
-          {/* Welome message that uses the name of the user */}
-          <Text style={styles.welcome_message}>
-            Welcome back,{" "}
-            <Text style={{ fontWeight: "bold" }}>{USER_DATA[0].name}.</Text>
-          </Text>
-          {/* Everything wrapped in this view is for the emergency banner at the top */}
-          <View>
-            <ImageBackground
-              source={require("../assets/red_emergency.png")}
-              style={styles.red_banner}
-            >
-              <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 15 }}>
-                Having an emergency?
-              </Text>
-              <TouchableOpacity>
-                <ImageBackground
-                  source={require("../assets/yellow-oval.png")}
-                  style={{ width: 62, height: 23, top: -20, left: 172 }}
-                >
-                  <Image
-                    source={require("../assets/arrow.png")}
-                    style={{ top: 4, left: 22 }}
-                  />
-                </ImageBackground>
-              </TouchableOpacity>
-            </ImageBackground>
-          </View>
-        </View>
-
-        {/* List of tips */}
-        <View>
-          <Text
-            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
+          <ImageBackground
+            source={require("../assets/red_emergency.png")}
+            style={styles.red_banner}
           >
-            General Health Tips
-          </Text>
-          {/* Our custom FlatList component for displaying tips */}
-          <TipList />
-        </View>
-
-        {/* List of healthcare cards */}
-        <View>
-          <Text
-            style={{
-              marginTop: 20,
-              marginBottom: 20,
-              left: 20,
-              color: "#444444",
-              fontSize: 15,
-            }}
-          >
-            Your Healthcare
-          </Text>
-          <ScrollView
-            style={{ flexDirection: "row", left: 15 }}
-            horizontal={true}
-          >
-            <TouchableOpacity style={styles.health_bubble}>
-              <Text>Women's Health</Text>
+            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 15 }}>
+              Having an emergency?
+            </Text>
+            <TouchableOpacity>
+              <ImageBackground
+                source={require("../assets/yellow-oval.png")}
+                style={{ width: 62, height: 23, top: -20, left: 172 }}
+              >
+                <Image
+                  source={require("../assets/arrow.png")}
+                  style={{ top: 4, left: 22 }}
+                />
+              </ImageBackground>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.health_bubble}>
-              <Text>Primary Care</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.health_bubble}>
-              <Text>Mental Health</Text>
-            </TouchableOpacity>
-          </ScrollView>
-          {/* Our custom FlatList component for displaying healthcare cards */}
-          <HealthcareList />
+          </ImageBackground>
         </View>
-
-        {/* List of urgent care facilities nearby*/}
-        <View>
-          <Text
-            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
-          >
-            Explore Urgent Care Near You
-          </Text>
-          {/* Our custom FlatList component for displaying tips */}
-          <UrgentCare />
-        </View>
-
-        {/* Button to navigate to the events screen (TO BE UPDATED FOR SURE) */}
-        <TouchableOpacity
-          style={styles.events_button}
-          onPress={() => navigation.navigate("Events")}
-        >
-          <Text>Go to Events Page!</Text>
-        </TouchableOpacity>
-
-        {/* Robot button at bottom of screen to navigate to the chat bot */}
-        <TouchableOpacity
-          style={styles.bot_button}
-          onPress={() => navigation.navigate("ChatBot")}
-        >
-          <Image source={require("../assets/robot.png")} />
-        </TouchableOpacity>
       </View>
+
+      {/* List of tips */}
+      <View>
+        <Text
+          style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
+        >
+          General Health Tips
+        </Text>
+        {/* Our custom FlatList component for displaying tips */}
+        <TipList />
+      </View>
+
+      {/* List of healthcare cards */}
+      <View>
+        <Text
+          style={{
+            marginTop: 20,
+            marginBottom: 20,
+            left: 20,
+            color: "#444444",
+            fontSize: 15,
+          }}
+        >
+          Your Healthcare
+        </Text>
+        <ScrollView
+          style={{ flexDirection: "row", left: 15 }}
+          horizontal={true}
+        >
+          <TouchableOpacity style={styles.health_bubble}>
+            <Text>Women's Health</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.health_bubble}>
+            <Text>Primary Care</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.health_bubble}>
+            <Text>Mental Health</Text>
+          </TouchableOpacity>
+        </ScrollView>
+        {/* Our custom FlatList component for displaying healthcare cards */}
+        <HealthcareList />
+      </View>
+
+      {/* List of urgent care facilities nearby*/}
+      <View>
+        <Text
+          style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
+        >
+          Explore Urgent Care Near You
+        </Text>
+        {/* Our custom FlatList component for displaying tips */}
+        <UrgentCare />
+      </View>
+
+      {/* List of tips */}
+      <View>
+        <Text
+          style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
+        >
+          Events Near You
+        </Text>
+        {/* Our custom FlatList component for displaying tips */}
+        <EventsNearYou />
+      </View>
+
+      {/* Button to navigate to the events screen (TO BE UPDATED FOR SURE) */}
+      <TouchableOpacity
+        style={styles.events_button}
+        onPress={() => navigation.navigate("Events")}
+      >
+        <Text>Go to Events Page!</Text>
+      </TouchableOpacity>
+
+      {/* Robot button at bottom of screen to navigate to the chat bot */}
+      <TouchableOpacity
+        style={styles.bot_button}
+        onPress={() => navigation.navigate("ChatBot")}
+      >
+        <Image source={require("../assets/robot.png")} />
+      </TouchableOpacity>
     </ScrollView>
   );
 };

@@ -60,8 +60,7 @@ class NewEventScreen extends React.Component {
           />
         </View>
 
-        {/* NOTE: holding off on date field until now till I clarify with design team
-          what exactly we want it to look like */}
+        {/* !!!THIS IS WHERE THE DATE FIELD SHOULD BE!!! */}
 
         {/* Container for time field */}
         <View style={styles.fieldContainer}>
