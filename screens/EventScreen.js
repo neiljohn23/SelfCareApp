@@ -115,16 +115,19 @@ const EventScreen = ({ navigation }) => {
       {/* Blue swoosh at the top of the page */}
       <Image
         source={require("../assets/blue-wave.png")}
-        style={{ position: "absolute" }}
+        resizeMode="stretch"
+        style={{ width: "100%" }}
       />
-      <Text style={{ justifyContent: "center", margin: 10 }}>EVENTS FEED</Text>
+
+      <View style={{ top: -50 }}>
+        <Text style={{ fontSize: 20 }}>EVENTS</Text>
+      </View>
 
       {/* List of events to be rendered */}
       <FlatList
         data={EVENT_DATA}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
-        style={{ marginTop: 95 }}
       />
 
       <TouchableOpacity

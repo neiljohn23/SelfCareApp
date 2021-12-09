@@ -30,7 +30,11 @@ const HomeScreen = ({ navigation }) => {
           blue swoosh; welcome message; emergency banner */}
       <View>
         {/* Blue swoosh at the top of the page */}
-        <Image source={require("../assets/blue-wave.png")} />
+        <Image
+          source={require("../assets/blue-wave.png")}
+          resizeMode="stretch"
+          style={{ width: "100%" }}
+        />
         {/* Welome message that uses the name of the user */}
         <Text style={styles.welcome_message}>
           Welcome back,{" "}
@@ -64,7 +68,7 @@ const HomeScreen = ({ navigation }) => {
       {/* General Health Tips list (uses custom TipList component) */}
       <View>
         <Text
-          style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
+          style={{ left: 20, color: "#444444", fontSize: 15, marginTop: 20 }}
         >
           General Health Tips
         </Text>

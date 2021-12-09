@@ -28,7 +28,11 @@ class NewEventScreen extends React.Component {
     return (
       <View style={styles.container}>
         {/* Blue swoosh at the top of the page */}
-        <Image source={require("../assets/blue-wave.png")} />
+        <Image
+          source={require("../assets/blue-wave.png")}
+          resizeMode="stretch"
+          style={{ width: "100%" }}
+        />
 
         <Text style={styles.title}>Add New Event</Text>
 

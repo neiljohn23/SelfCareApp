@@ -56,7 +56,6 @@ const TipList = () => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
     flexDirection: "column",
     justifyContent: "center",
     marginHorizontal: 10,
