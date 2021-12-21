@@ -116,10 +116,37 @@ const ExploreTopicsList = () => {
     <View>
       {/* Sexual Health card */}
       <TouchableOpacity style={styles.container}>
-        <View style={{ backgroundColor: "#F6A6A6", flex: 1 }}></View>
-        <View style={{ flex: 9 }}>
-          <Text style={{ fontWeight: "bold" }}>{DATA[0].title}</Text>
-          <Text style={{ flexWrap: "wrap" }}>{DATA[0].description}</Text>
+        <View
+          style={{
+            backgroundColor: "#F6A6A6",
+            width: "9%",
+            height: "100%",
+            borderColor: "#F0F2F4",
+            borderStyle: "solid",
+            borderTopRadiusLeft: 30,
+            borderBottomRadiusLeft: 30,
+          }}
+        ></View>
+        <View style={{ padding: 12 }}>
+          <Text
+            style={{
+              fontWeight: "bold",
+              alignSelf: "flex-start",
+              marginTop: 10,
+            }}
+          >
+            {DATA[0].title}
+          </Text>
+          <Text
+            style={{
+              flexWrap: "wrap",
+              color: "gray",
+              marginVertical: 10,
+              marginRight: 4,
+            }}
+          >
+            {DATA[0].description}
+          </Text>
         </View>
       </TouchableOpacity>
       {/* Mental Health card */}
@@ -168,20 +195,19 @@ const ExploreTopicsList = () => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "flex-start",
-    flexDirection: "column",
+    flexDirection: "row",
     justifyContent: "center",
+    alignItems: "center",
     marginHorizontal: 10,
     marginVertical: 7,
     left: 8,
-    padding: 10,
     width: "90%",
     height: 80,
     borderStyle: "solid",
     borderRadius: 10,
     borderColor: "#F0F2F4",
     borderWidth: 1,
-    backgroundColor: "#ffe4dc",
+    backgroundColor: "#FFF",
   },
   text: {
     justifyContent: "center",
