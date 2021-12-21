@@ -14,6 +14,7 @@ import HealthcareList from "./../components/HealthcareList.js";
 import UrgentCareList from "./../components/UrgentCareList.js";
 import EventsNearYou from "./../components/EventsNearYou.js";
 import EducationList from "./../components/EducationList.js";
+import ExploreTopicsList from "./../components/ExploreTopics.js";
 
 const HomeScreen = ({ navigation }) => {
   const USER_DATA = [
@@ -138,6 +139,17 @@ const HomeScreen = ({ navigation }) => {
         </Text>
         {/* Our custom FlatList component for displaying events near you */}
         <EducationList />
+      </View>
+
+      {/* Explore topics list (uses custom ExploreTopicsList list) */}
+      <View>
+        <Text
+          style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
+        >
+          Explore Topics
+        </Text>
+        {/* Our custom FlatList component for displaying events near you */}
+        <ExploreTopicsList />
       </View>
 
       {/* Button to navigate to the events screen (TO BE UPDATED FOR SURE) */}
