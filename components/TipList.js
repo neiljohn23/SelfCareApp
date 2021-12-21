@@ -2,11 +2,9 @@ import React from "react";
 import {
   StyleSheet,
   SafeAreaView,
-  View,
   FlatList,
   Text,
   TouchableOpacity,
-  Image,
 } from "react-native";
 
 const TipList = () => {

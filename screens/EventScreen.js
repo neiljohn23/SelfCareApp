@@ -7,7 +7,6 @@ import {
   Image,
   SafeAreaView,
   FlatList,
-  ImageBackground,
 } from "react-native";
 
 const EventScreen = ({ navigation }) => {

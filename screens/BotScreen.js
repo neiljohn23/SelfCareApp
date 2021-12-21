@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Text, View, Button, StyleSheet } from "react-native";
+import { View } from "react-native";
 import { Bubble, GiftedChat } from "react-native-gifted-chat";
 
 var messageNumber = 0;
