@@ -18,7 +18,7 @@ const ExploreTopicsList = () => {
       card_style: StyleSheet.create({
         color_block: {
           backgroundColor: "#F6A6A6",
-          width: 48,
+          width: "12%",
           height: "100%",
           borderColor: "#F0F2F4",
           borderStyle: "solid",
@@ -191,9 +191,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    margin: 26,
-    width: "85%",
-    height: 100,
+    marginHorizontal: 20,
+    marginVertical: 10,
+    width: "88%",
+    height: "9.25%",
     borderStyle: "solid",
     borderRadius: 10,
     borderColor: "#F0F2F4",
@@ -201,18 +202,22 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
   },
   container_text: {
-    padding: 12,
+    paddingLeft: 12,
+    paddingTop: 5,
+    paddingBottom: 5,
     flex: 4,
+    flexDirection: "column",
+    justifyContent: "space-between",
   },
   text_title: {
     fontWeight: "bold",
     alignSelf: "flex-start",
-    marginTop: 10,
+    marginTop: 5,
   },
   text_details: {
     flexWrap: "wrap",
     color: "gray",
-    marginVertical: 10,
+    marginBottom: 5,
     marginRight: 20,
   },
   shadowProp: {
