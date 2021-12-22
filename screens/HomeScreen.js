@@ -67,9 +67,9 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* General Health Tips list (uses custom TipList component) */}
-        <View>
+        <View style={{ margin: 12 }}>
           <Text
-            style={{ left: 20, color: "#444444", fontSize: 15, marginTop: 20 }}
+            style={{ left: 12, color: "#444444", fontSize: 17, marginTop: 20 }}
           >
             General Health Tips
           </Text>
@@ -78,21 +78,21 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Your Healthcare list (uses custom HealthcareList component) */}
-        <View>
+        <View style={{ margin: 12 }}>
           <Text
             style={{
               marginTop: 20,
               marginBottom: 20,
-              left: 20,
+              left: 12,
               color: "#444444",
-              fontSize: 15,
+              fontSize: 17,
             }}
           >
             Your Healthcare
           </Text>
           {/* The little ovals above the list (see Figma) */}
           <ScrollView
-            style={{ flexDirection: "row", left: 15 }}
+            style={{ flexDirection: "row", left: 6 }}
             horizontal={true}
           >
             <TouchableOpacity style={styles.health_bubble}>
@@ -110,9 +110,9 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Explore Urgent Care Near You list (uses custom UrgentCareList component) */}
-        <View>
+        <View style={{ margin: 12 }}>
           <Text
-            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
+            style={{ marginTop: 20, left: 12, color: "#444444", fontSize: 17 }}
           >
             Explore Urgent Care Near You
           </Text>
@@ -121,9 +121,9 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Events Near You list (uses custom EventsNearYou list) */}
-        <View>
+        <View style={{ margin: 12 }}>
           <Text
-            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
+            style={{ marginTop: 20, left: 12, color: "#444444", fontSize: 17 }}
           >
             Events Near You
           </Text>
@@ -132,9 +132,9 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Education from around campus list (uses custom EducationList list) */}
-        <View>
+        <View style={{ marginLeft: 3, marginRight: 12 }}>
           <Text
-            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
+            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 17 }}
           >
             Education From Around Campus
           </Text>
@@ -143,9 +143,15 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Explore topics list (uses custom ExploreTopicsList list) */}
-        <View>
+        <View style={{ margin: 10 }}>
           <Text
-            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
+            style={{
+              marginTop: 20,
+              left: 20,
+              color: "#444444",
+              fontSize: 17,
+              marginBottom: 10,
+            }}
           >
             Explore Topics
           </Text>
