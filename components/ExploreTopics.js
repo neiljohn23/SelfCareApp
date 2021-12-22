@@ -16,27 +16,16 @@ const ExploreTopicsList = () => {
       description:
         "is your reproductive system healthy and are you having positive sexual experiences?",
       card_style: StyleSheet.create({
-        container: {
-          left: 8,
-          alignItems: "center",
-          justifyContent: "flex-start",
-          flexDirection: "column",
-          margin: 15,
-          padding: 10,
-          width: 300,
-          borderStyle: "solid",
-          borderRadius: 15,
-          borderColor: "#F0F2F4",
-          borderWidth: 1,
-          backgroundColor: "#F0F2F4",
-          backgroundColor: "#fff",
-        },
         color_block: {
-          color: "#F6A6A6",
-          flex: 1,
-        },
-        text_block: {
-          flex: 9,
+          backgroundColor: "#F6A6A6",
+          width: 48,
+          height: "100%",
+          borderColor: "#F0F2F4",
+          borderStyle: "solid",
+          borderRadius: 10,
+          borderTopRightRadius: 0,
+          borderBottomRightRadius: 0,
+          overflow: "hidden",
         },
       }),
     },
@@ -46,11 +35,15 @@ const ExploreTopicsList = () => {
       description: "how do you think, feel or act?",
       card_style: StyleSheet.create({
         color_block: {
-          color: "#D2EDB0",
-          flex: 1,
-        },
-        text_block: {
-          flex: 9,
+          backgroundColor: "#D2EDB0",
+          width: 48,
+          height: "100%",
+          borderColor: "#F0F2F4",
+          borderStyle: "solid",
+          borderRadius: 10,
+          borderTopRightRadius: 0,
+          borderBottomRightRadius: 0,
+          overflow: "hidden",
         },
       }),
     },
@@ -60,11 +53,15 @@ const ExploreTopicsList = () => {
       description: "how does your body feel?",
       card_style: StyleSheet.create({
         color_block: {
-          color: "#D382B3",
-          flex: 1,
-        },
-        text_block: {
-          flex: 9,
+          backgroundColor: "#D382B3",
+          width: 48,
+          height: "100%",
+          borderColor: "#F0F2F4",
+          borderStyle: "solid",
+          borderRadius: 10,
+          borderTopRightRadius: 0,
+          borderBottomRightRadius: 0,
+          overflow: "hidden",
         },
       }),
     },
@@ -74,11 +71,15 @@ const ExploreTopicsList = () => {
       description: "are you eating and drinking well?",
       card_style: StyleSheet.create({
         color_block: {
-          color: "#95CCFF",
-          flex: 1,
-        },
-        text_block: {
-          flex: 9,
+          backgroundColor: "#95CCFF",
+          width: 48,
+          height: "100%",
+          borderColor: "#F0F2F4",
+          borderStyle: "solid",
+          borderRadius: 10,
+          borderTopRightRadius: 0,
+          borderBottomRightRadius: 0,
+          overflow: "hidden",
         },
       }),
     },
@@ -88,11 +89,15 @@ const ExploreTopicsList = () => {
       description: "when was the last time you got a basic checkup?",
       card_style: StyleSheet.create({
         color_block: {
-          color: "#FBDC8E",
-          flex: 1,
-        },
-        text_block: {
-          flex: 9,
+          backgroundColor: "#FBDC8E",
+          width: 48,
+          height: "100%",
+          borderColor: "#F0F2F4",
+          borderStyle: "solid",
+          borderRadius: 10,
+          borderTopRightRadius: 0,
+          borderBottomRightRadius: 0,
+          overflow: "hidden",
         },
       }),
     },
@@ -102,11 +107,15 @@ const ExploreTopicsList = () => {
       description: "can you wait more than 20 minutes to see a clinician?",
       card_style: StyleSheet.create({
         color_block: {
-          color: "#FFE4D8",
-          flex: 1,
-        },
-        text_block: {
-          flex: 9,
+          backgroundColor: "#FFE4D8",
+          width: 48,
+          height: "100%",
+          borderColor: "#F0F2F4",
+          borderStyle: "solid",
+          borderRadius: 10,
+          borderTopRightRadius: 0,
+          borderBottomRightRadius: 0,
+          overflow: "hidden",
         },
       }),
     },
@@ -115,78 +124,56 @@ const ExploreTopicsList = () => {
   return (
     <View>
       {/* Sexual Health card */}
-      <TouchableOpacity style={styles.container}>
-        <View
-          style={{
-            backgroundColor: "#F6A6A6",
-            width: "9%",
-            height: "100%",
-            borderColor: "#F0F2F4",
-            borderStyle: "solid",
-            borderTopRadiusLeft: 30,
-            borderBottomRadiusLeft: 30,
-          }}
-        ></View>
+      <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+        <View style={DATA[0].card_style.color_block}></View>
         <View style={{ padding: 12 }}>
-          <Text
-            style={{
-              fontWeight: "bold",
-              alignSelf: "flex-start",
-              marginTop: 10,
-            }}
-          >
-            {DATA[0].title}
-          </Text>
-          <Text
-            style={{
-              flexWrap: "wrap",
-              color: "gray",
-              marginVertical: 10,
-              marginRight: 4,
-            }}
-          >
-            {DATA[0].description}
-          </Text>
+          <Text style={styles.text_title}>{DATA[0].title}</Text>
+          <Text style={styles.text_details}>{DATA[0].description}</Text>
         </View>
       </TouchableOpacity>
+
       {/* Mental Health card */}
-      <TouchableOpacity style={styles.container}>
-        <View style={{ backgroundColor: "#D2EDB0", flex: 1 }}></View>
-        <View style={{ flex: 9 }}>
-          <Text style={{ fontWeight: "bold" }}>{DATA[1].title}</Text>
-          <Text style={{ flexWrap: "wrap" }}>{DATA[1].description}</Text>
+      <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+        <View style={DATA[1].card_style.color_block}></View>
+        <View style={{ padding: 12 }}>
+          <Text style={styles.text_title}>{DATA[1].title}</Text>
+          <Text style={styles.text_details}>{DATA[1].description}</Text>
         </View>
       </TouchableOpacity>
+
       {/* Mental Health card */}
-      <TouchableOpacity style={styles.container}>
-        <View style={{ backgroundColor: "#D382B3", flex: 1 }}></View>
-        <View style={{ flex: 9 }}>
-          <Text style={{ fontWeight: "bold" }}>{DATA[2].title}</Text>
-          <Text style={{ flexWrap: "wrap" }}>{DATA[2].description}</Text>
+      <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+        <View style={DATA[2].card_style.color_block}></View>
+        <View style={{ padding: 12 }}>
+          <Text style={styles.text_title}>{DATA[2].title}</Text>
+          <Text style={styles.text_details}>{DATA[2].description}</Text>
         </View>
       </TouchableOpacity>
+
       {/* Nutrition card */}
-      <TouchableOpacity style={styles.container}>
-        <View style={{ backgroundColor: "#95CCFF", flex: 1 }}></View>
-        <View style={{ flex: 9 }}>
-          <Text style={{ fontWeight: "bold" }}>{DATA[3].title}</Text>
-          <Text style={{ flexWrap: "wrap" }}>{DATA[3].description}</Text>
+      <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+        <View style={DATA[3].card_style.color_block}></View>
+        <View style={{ padding: 12 }}>
+          <Text style={styles.text_title}>{DATA[3].title}</Text>
+          <Text style={styles.text_details}>{DATA[3].description}</Text>
         </View>
       </TouchableOpacity>
+
       {/* Primary care card */}
-      <TouchableOpacity style={styles.container}>
-        <View style={{ backgroundColor: "#FBDC8E", flex: 1 }}></View>
-        <View style={{ flex: 9 }}>
-          <Text style={{ fontWeight: "bold" }}>{DATA[4].title}</Text>
-          <Text style={{ flexWrap: "wrap" }}>{DATA[4].description}</Text>
+      <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+        <View style={DATA[4].card_style.color_block}></View>
+        <View style={{ padding: 12 }}>
+          <Text style={styles.text_title}>{DATA[4].title}</Text>
+          <Text style={styles.text_details}>{DATA[4].description}</Text>
         </View>
       </TouchableOpacity>
+
       {/* Urgent care card */}
-      <TouchableOpacity style={styles.container}>
-        <View style={{ backgroundColor: "#FBDC8E", flex: 1 }}></View>
-        <View style={{ flex: 9 }}>
-          <Text style={{ fontWeight: "bold" }}>{DATA[5].title}</Text>
-          <Text style={{ flexWrap: "wrap" }}>{DATA[5].description}</Text>
+      <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+        <View style={DATA[5].card_style.color_block}></View>
+        <View style={{ padding: 12 }}>
+          <Text style={styles.text_title}>{DATA[5].title}</Text>
+          <Text style={styles.text_details}>{DATA[5].description}</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -198,10 +185,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    marginHorizontal: 10,
-    marginVertical: 7,
+    marginHorizontal: 28,
+    marginVertical: 10,
     left: 8,
-    width: "90%",
+    width: "85%",
     height: 80,
     borderStyle: "solid",
     borderRadius: 10,
@@ -209,12 +196,16 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     backgroundColor: "#FFF",
   },
-  text: {
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    margin: 20,
-    fontSize: 15,
+  text_title: {
+    fontWeight: "bold",
+    alignSelf: "flex-start",
+    marginTop: 10,
+  },
+  text_details: {
+    flexWrap: "wrap",
+    color: "gray",
+    marginVertical: 10,
+    marginRight: 20,
   },
   shadowProp: {
     shadowColor: "#171717",
