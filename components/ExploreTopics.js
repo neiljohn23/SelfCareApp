@@ -26,6 +26,7 @@ const ExploreTopicsList = () => {
           borderTopRightRadius: 0,
           borderBottomRightRadius: 0,
           overflow: "hidden",
+          flex: 1,
         },
       }),
     },
@@ -44,6 +45,7 @@ const ExploreTopicsList = () => {
           borderTopRightRadius: 0,
           borderBottomRightRadius: 0,
           overflow: "hidden",
+          flex: 1,
         },
       }),
     },
@@ -62,6 +64,7 @@ const ExploreTopicsList = () => {
           borderTopRightRadius: 0,
           borderBottomRightRadius: 0,
           overflow: "hidden",
+          flex: 1,
         },
       }),
     },
@@ -80,6 +83,7 @@ const ExploreTopicsList = () => {
           borderTopRightRadius: 0,
           borderBottomRightRadius: 0,
           overflow: "hidden",
+          flex: 1,
         },
       }),
     },
@@ -98,6 +102,7 @@ const ExploreTopicsList = () => {
           borderTopRightRadius: 0,
           borderBottomRightRadius: 0,
           overflow: "hidden",
+          flex: 1,
         },
       }),
     },
@@ -116,6 +121,7 @@ const ExploreTopicsList = () => {
           borderTopRightRadius: 0,
           borderBottomRightRadius: 0,
           overflow: "hidden",
+          flex: 1,
         },
       }),
     },
@@ -126,7 +132,7 @@ const ExploreTopicsList = () => {
       {/* Sexual Health card */}
       <TouchableOpacity style={[styles.container, styles.shadowProp]}>
         <View style={DATA[0].card_style.color_block}></View>
-        <View style={{ padding: 12 }}>
+        <View style={styles.container_text}>
           <Text style={styles.text_title}>{DATA[0].title}</Text>
           <Text style={styles.text_details}>{DATA[0].description}</Text>
         </View>
@@ -135,7 +141,7 @@ const ExploreTopicsList = () => {
       {/* Mental Health card */}
       <TouchableOpacity style={[styles.container, styles.shadowProp]}>
         <View style={DATA[1].card_style.color_block}></View>
-        <View style={{ padding: 12 }}>
+        <View style={styles.container_text}>
           <Text style={styles.text_title}>{DATA[1].title}</Text>
           <Text style={styles.text_details}>{DATA[1].description}</Text>
         </View>
@@ -144,7 +150,7 @@ const ExploreTopicsList = () => {
       {/* Mental Health card */}
       <TouchableOpacity style={[styles.container, styles.shadowProp]}>
         <View style={DATA[2].card_style.color_block}></View>
-        <View style={{ padding: 12 }}>
+        <View style={styles.container_text}>
           <Text style={styles.text_title}>{DATA[2].title}</Text>
           <Text style={styles.text_details}>{DATA[2].description}</Text>
         </View>
@@ -153,7 +159,7 @@ const ExploreTopicsList = () => {
       {/* Nutrition card */}
       <TouchableOpacity style={[styles.container, styles.shadowProp]}>
         <View style={DATA[3].card_style.color_block}></View>
-        <View style={{ padding: 12 }}>
+        <View style={styles.container_text}>
           <Text style={styles.text_title}>{DATA[3].title}</Text>
           <Text style={styles.text_details}>{DATA[3].description}</Text>
         </View>
@@ -162,7 +168,7 @@ const ExploreTopicsList = () => {
       {/* Primary care card */}
       <TouchableOpacity style={[styles.container, styles.shadowProp]}>
         <View style={DATA[4].card_style.color_block}></View>
-        <View style={{ padding: 12 }}>
+        <View style={styles.container_text}>
           <Text style={styles.text_title}>{DATA[4].title}</Text>
           <Text style={styles.text_details}>{DATA[4].description}</Text>
         </View>
@@ -171,7 +177,7 @@ const ExploreTopicsList = () => {
       {/* Urgent care card */}
       <TouchableOpacity style={[styles.container, styles.shadowProp]}>
         <View style={DATA[5].card_style.color_block}></View>
-        <View style={{ padding: 12 }}>
+        <View style={styles.container_text}>
           <Text style={styles.text_title}>{DATA[5].title}</Text>
           <Text style={styles.text_details}>{DATA[5].description}</Text>
         </View>
@@ -185,16 +191,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    marginHorizontal: 28,
-    marginVertical: 10,
-    left: 8,
+    margin: 26,
     width: "85%",
-    height: 80,
+    height: 100,
     borderStyle: "solid",
     borderRadius: 10,
     borderColor: "#F0F2F4",
     borderWidth: 1,
     backgroundColor: "#FFF",
+  },
+  container_text: {
+    padding: 12,
+    flex: 4,
   },
   text_title: {
     fontWeight: "bold",
