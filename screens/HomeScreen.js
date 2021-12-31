@@ -44,32 +44,25 @@ const HomeScreen = ({ navigation }) => {
 
           {/* Everything wrapped in this view is for the emergency banner at the top */}
           <View>
-            <ImageBackground
-              source={require("../assets/red_emergency.png")}
-              style={styles.red_banner}
-            >
-              <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 15 }}>
+            <TouchableOpacity style={styles.red_banner}>
+              <Text
+                style={{
+                  color: "#fff",
+                  fontWeight: "bold",
+                  fontSize: 14,
+                  textDecorationLine: "underline",
+                }}
+              >
                 Having an emergency?
               </Text>
-              <TouchableOpacity>
-                <ImageBackground
-                  source={require("../assets/yellow-oval.png")}
-                  style={{ width: 62, height: 23, top: -20, left: 172 }}
-                >
-                  <Image
-                    source={require("../assets/arrow.png")}
-                    style={{ top: 4, left: 22 }}
-                  />
-                </ImageBackground>
-              </TouchableOpacity>
-            </ImageBackground>
+            </TouchableOpacity>
           </View>
         </View>
 
         {/* General Health Tips list (uses custom TipList component) */}
-        <View style={{ margin: 12 }}>
+        <View>
           <Text
-            style={{ left: 12, color: "#444444", fontSize: 17, marginTop: 20 }}
+            style={{ left: 20, color: "#444444", fontSize: 15, marginTop: 20 }}
           >
             General Health Tips
           </Text>
@@ -78,21 +71,21 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Your Healthcare list (uses custom HealthcareList component) */}
-        <View style={{ margin: 12 }}>
+        <View>
           <Text
             style={{
               marginTop: 20,
               marginBottom: 20,
-              left: 12,
+              left: 20,
               color: "#444444",
-              fontSize: 17,
+              fontSize: 15,
             }}
           >
             Your Healthcare
           </Text>
           {/* The little ovals above the list (see Figma) */}
           <ScrollView
-            style={{ flexDirection: "row", left: 6 }}
+            style={{ flexDirection: "row", left: 15 }}
             horizontal={true}
           >
             <TouchableOpacity style={styles.health_bubble}>
@@ -110,9 +103,9 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Explore Urgent Care Near You list (uses custom UrgentCareList component) */}
-        <View style={{ margin: 12 }}>
+        <View>
           <Text
-            style={{ marginTop: 20, left: 12, color: "#444444", fontSize: 17 }}
+            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
           >
             Explore Urgent Care Near You
           </Text>
@@ -121,9 +114,9 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Events Near You list (uses custom EventsNearYou list) */}
-        <View style={{ margin: 12 }}>
+        <View>
           <Text
-            style={{ marginTop: 20, left: 12, color: "#444444", fontSize: 17 }}
+            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
           >
             Events Near You
           </Text>
@@ -132,9 +125,9 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Education from around campus list (uses custom EducationList list) */}
-        <View style={{ marginLeft: 3, marginRight: 12 }}>
+        <View>
           <Text
-            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 17 }}
+            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
           >
             Education From Around Campus
           </Text>
@@ -143,15 +136,9 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Explore topics list (uses custom ExploreTopicsList list) */}
-        <View style={{ margin: 10 }}>
+        <View>
           <Text
-            style={{
-              marginTop: 20,
-              left: 20,
-              color: "#444444",
-              fontSize: 17,
-              marginBottom: 10,
-            }}
+            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
           >
             Explore Topics
           </Text>
@@ -223,10 +210,11 @@ const styles = StyleSheet.create({
   },
   red_banner: {
     marginTop: 15,
-    width: 250,
+    backgroundColor: "#FF7373",
+    width: "100%",
     height: 30,
-    paddingTop: 6,
-    paddingLeft: 10,
+    padding: 5,
+    alignItems: "center",
   },
   health_bubble: {
     backgroundColor: "#fff",
