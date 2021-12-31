@@ -71,35 +71,40 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Your Healthcare list (uses custom HealthcareList component) */}
-        <View>
-          <Text
-            style={{
-              marginTop: 20,
-              marginBottom: 20,
-              left: 20,
-              color: "#444444",
-              fontSize: 15,
-            }}
-          >
-            Your Healthcare
-          </Text>
-          {/* The little ovals above the list (see Figma) */}
-          <ScrollView
-            style={{ flexDirection: "row", left: 15 }}
-            horizontal={true}
-          >
-            <TouchableOpacity style={styles.health_bubble}>
-              <Text>Women's Health</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.health_bubble}>
-              <Text>Primary Care</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.health_bubble}>
-              <Text>Mental Health</Text>
-            </TouchableOpacity>
-          </ScrollView>
-          {/* Our custom FlatList component for displaying healthcare cards in a list */}
-          <HealthcareList />
+        <View style={{ marginVertical: 20 }}>
+          <View style={{ backgroundColor: "#CAECFF" }}>
+            <Text
+              style={{
+                marginTop: 20,
+                marginBottom: 20,
+                left: 20,
+                color: "#444444",
+                fontSize: 15,
+              }}
+            >
+              Your Healthcare
+            </Text>
+          </View>
+
+          <View style={{ backgroundColor: "#E4F3FB", paddingBottom: 20 }}>
+            {/* The little ovals above the list (see Figma) */}
+            <ScrollView
+              style={{ flexDirection: "row", left: 8, marginTop: 10 }}
+              horizontal={true}
+            >
+              <TouchableOpacity style={styles.health_bubble}>
+                <Text>Women's Health</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.health_bubble}>
+                <Text>Primary Care</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.health_bubble}>
+                <Text>Mental Health</Text>
+              </TouchableOpacity>
+            </ScrollView>
+            {/* Our custom FlatList component for displaying healthcare cards in a list */}
+            <HealthcareList />
+          </View>
         </View>
 
         {/* Explore Urgent Care Near You list (uses custom UrgentCareList component) */}
