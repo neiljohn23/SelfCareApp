@@ -36,6 +36,11 @@ const HomeScreen = ({ navigation }) => {
             resizeMode="stretch"
             style={{ width: "100%" }}
           />
+          {/* Welome message that uses the name of the user */}
+          <Text style={styles.welcome_message}>
+            Welcome back,{" "}
+            <Text style={{ fontWeight: "bold" }}>{USER_DATA[0].name}.</Text>
+          </Text>
 
           {/* Everything wrapped in this view is for the emergency banner at the top */}
           <View>

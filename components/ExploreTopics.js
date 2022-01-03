@@ -131,7 +131,6 @@ const ExploreTopicsList = () => {
     <View>
       {/* Sexual Health card */}
       <TouchableOpacity style={[styles.container, styles.shadowProp]}>
-        <View style={DATA[0].card_style.color_block}></View>
         <View style={styles.container_text}>
           <Text style={styles.text_title}>{DATA[0].title}</Text>
           <Text style={styles.text_details}>{DATA[0].description}</Text>
@@ -140,7 +139,6 @@ const ExploreTopicsList = () => {
 
       {/* Mental Health card */}
       <TouchableOpacity style={[styles.container, styles.shadowProp]}>
-        <View style={DATA[1].card_style.color_block}></View>
         <View style={styles.container_text}>
           <Text style={styles.text_title}>{DATA[1].title}</Text>
           <Text style={styles.text_details}>{DATA[1].description}</Text>
@@ -149,7 +147,6 @@ const ExploreTopicsList = () => {
 
       {/* Mental Health card */}
       <TouchableOpacity style={[styles.container, styles.shadowProp]}>
-        <View style={DATA[2].card_style.color_block}></View>
         <View style={styles.container_text}>
           <Text style={styles.text_title}>{DATA[2].title}</Text>
           <Text style={styles.text_details}>{DATA[2].description}</Text>
@@ -158,7 +155,6 @@ const ExploreTopicsList = () => {
 
       {/* Nutrition card */}
       <TouchableOpacity style={[styles.container, styles.shadowProp]}>
-        <View style={DATA[3].card_style.color_block}></View>
         <View style={styles.container_text}>
           <Text style={styles.text_title}>{DATA[3].title}</Text>
           <Text style={styles.text_details}>{DATA[3].description}</Text>
@@ -167,7 +163,6 @@ const ExploreTopicsList = () => {
 
       {/* Primary care card */}
       <TouchableOpacity style={[styles.container, styles.shadowProp]}>
-        <View style={DATA[4].card_style.color_block}></View>
         <View style={styles.container_text}>
           <Text style={styles.text_title}>{DATA[4].title}</Text>
           <Text style={styles.text_details}>{DATA[4].description}</Text>
@@ -176,7 +171,6 @@ const ExploreTopicsList = () => {
 
       {/* Urgent care card */}
       <TouchableOpacity style={[styles.container, styles.shadowProp]}>
-        <View style={DATA[5].card_style.color_block}></View>
         <View style={styles.container_text}>
           <Text style={styles.text_title}>{DATA[5].title}</Text>
           <Text style={styles.text_details}>{DATA[5].description}</Text>
