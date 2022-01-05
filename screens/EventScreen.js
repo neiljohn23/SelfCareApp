@@ -13,6 +13,10 @@ const EventScreen = ({ navigation }) => {
   {
     /* Array of event data that is passed to the FlatList */
   }
+
+  {
+    /* To be added: event */
+  }
   const EVENT_DATA = [
     {
       id: 0,

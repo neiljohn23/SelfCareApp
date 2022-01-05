@@ -88,6 +88,7 @@ const HomeScreen = ({ navigation }) => {
 
           <View style={{ backgroundColor: "#E4F3FB", paddingBottom: 20 }}>
             {/* The little ovals above the list (see Figma) */}
+            {/* TO BE DONE: CREATE INDIVIDUAL CLASS */}
             <ScrollView
               style={{ flexDirection: "row", left: 8, marginTop: 10 }}
               horizontal={true}
