@@ -64,7 +64,17 @@ class NewEventScreen extends React.Component {
           />
         </View>
 
-        {/* !!!THIS IS WHERE THE DATE FIELD SHOULD BE!!! */}
+        {/* Container for date field */}
+        <View style={styles.fieldContainer}>
+          <Text style={{ flex: 1, margin: 6, fontSize: 14.5 }}>Date</Text>
+          <TextInput
+            style={{ flex: 1, marginLeft: 2, backgroundColor: "#E0E4E7" }}
+            value={this.state.date}
+            onChangeText={(date) => {
+              this.setState({ date });
+            }}
+          />
+        </View>
 
         {/* Container for time field */}
         <View style={styles.fieldContainer}>
